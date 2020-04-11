@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+</html>
+
+	  
+	  
+  
+<head>
+	  
+<SCRIPT language=JavaScript>
+
+
+
+function perc() {
+ p = document.form1.Physics.value;
+ c = document.form1.Chemistry.value;
+ b = document.form1.Biology.value
+ e = document.form1.English.value;
+ m = document.form1.Math.value;
+ 
+ alert((p+b+c+e+m)/5);
+ 
+ 
+ }
+
+</SCRIPT>
+	  </head>
+   
+<body bgcolor="#E6E6FA">
+	<h4 align="center"> Select your option </h4>
+
+   
+
+<label for="Details">
+    <input type="checkbox" id="Details" onclick="ShowHideDiv(this)" />
+    View details
+</label>
+<hr />
+<div id="details" style="display: none">
+    <h2>Enter ID of the student</h2>
+    <input type="text" id="id" name="id" />
+    <input type="submit" name="submit" method="GET" action="Update.php"/>
+</div>
+<script type="text/javascript">
+    function ShowHideDiv(Details) {
+        var details = document.getElementById("details");
+        details.style.display = Details.checked ? "block" : "none";
+    }
+</script>
+<hr/>
+<label for="Update">
+    <input type="checkbox" id="Update" onclick="ShowHideDiv2(this)" />
+    Enter New data
+</label>
+<hr />
+<form method="GET" action="Update.php">
+<div id="update" style="display: none">
+    
+	
+	
+	
+	
+<FORM name=form1 method="GET">
+<TABLE cellSpacing=1 cellPadding=1 border=1>
+  <TBODY>
+  <TR>
+    <TD align=middle colSpan=3><B><FONT size=4>ENTER DETAILS</FONT></B> 
+      </TD>
+  <TR>
+    <TD>ID : = <INPUT size=5 name=Id> </TD>
+	<TD>Name IS : = <INPUT size=5 name=Name></TD>
+    <!-- <TD>Answer: <INPUT maxLength=40 size=5 name=total1></TD>
+    <TD><INPUT onclick=perc1() type=button value=Calculate></TD> -->
+  <TR><TD align ="center" colspan=2>    <b>   Enter Marks </b>    </TD></TR>
+  <TR> 
+    <TD> Physics:  <INPUT size=5 name="physics"></TD>
+	<TD>Chemistry: <INPUT size=5  name=Chemistry></TD>
+	</TR>
+	<TR>
+    <TD>Biology: <INPUT size=5 name=Biology> </TD>
+	<TD> Math: <input size =3 name=Math></TD>
+</tr>
+    	<tr>
+		<td align="center" colspan=2>English:  <input size=3 name=English></td>
+	 </tr>
+    
+  <TR>
+  <TD><input type="submit" name="submit_U" onsubmit="perc()" /></TD>
+    <TD align=middle 
+colSpan=3><INPUT type=reset value=Reset></TD></TR></TBODY></TABLE></FORM>
+  
+
+</div>
+<hr/>
+
+
+</form>
+
+<label for="Delete">
+    <input type="checkbox" id="Delete" onclick="ShowHideDivi(this)" />
+    Delete Details
+	</label>
+<hr />
+
+
+<div id="Delete" style="display: block">
+    <h2>Enter Id of the student you want to delete</h2>
+    <input type="text" id="id" name="id" />
+    <input type="submit" name="submit_D" method="GET" action="Update.php"/>
+</div>
+
+
+
+
+<script type="text/javascript">
+    function ShowHideDiv2(Update) {
+        var update = document.getElementById("update");
+        update.style.display = Update.checked ? "block" : "none";
+    
+	}
+	
+</script>
+
+
+
+
+	   
+	   
+	  
+   </body>
+</html>
